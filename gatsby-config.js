@@ -30,7 +30,7 @@ module.exports = {
       options: {
         fonts: [
           `noto sans kr:300,400,500,700,900`,
-          `jetbrains mono:400,700,800`,
+          `space mono:400,700`,
         ],
         display: "swap",
       },

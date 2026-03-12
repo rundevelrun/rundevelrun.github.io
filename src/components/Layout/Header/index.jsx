@@ -48,9 +48,9 @@ const Inner = styled.div`
 
 const BlogTitle = styled.span`
   letter-spacing: -1px;
-  font-family: "JetBrains Mono", monospace;
-  font-weight: 800;
-  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 17px;
   color: ${props => props.theme.colors.text};
 
   & > a {
