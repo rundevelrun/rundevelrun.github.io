@@ -21,11 +21,15 @@ tags:
 > - iPhone / iPad (Termius, Happy Coder 앱)
 
 ## ✋ 들어가며
+
 아이패드로 개발이 되냐고? 된다.
-모든 연산은 서버에서 하고 아이패드는 그냥 우리가 알던 아이패드이다.
+
+모든 연산은 서버에서 하고 아이패드는 그냥 우리가 알던 아이패드다.
+
 Tailscale + Mosh + Tmux + Happy Coder 조합으로 실제로 쓰고 있는 세팅을 정리했다.
 
 ## 🌐 Tailscale
+
 WireGuard 기반 메시 VPN. 포트포워딩 없이 서버에 `100.x.x.x` 고정 IP가 생긴다.
 
 #### ***서버 설치***
@@ -38,7 +42,9 @@ sudo tailscale up
 iOS/Android 앱 설치 후 같은 계정으로 로그인하면 끝.
 
 ## 🔗 Mosh
+
 SSH는 와이파이가 바뀌거나 화면이 꺼지면 세션이 죽는다.
+
 Mosh는 UDP 기반이라 네트워크가 끊겼다 복구돼도 세션이 그대로다.
 
 #### ***서버 설치***
@@ -51,6 +57,7 @@ sudo firewall-cmd --reload
 Termius 앱 호스트 설정에서 Connection Type을 Mosh로 변경하고 Tailscale IP와 계정 정보를 입력하면 된다.
 
 ## 📺 Tmux
+
 Mosh를 끊어도 서버의 Tmux 세션은 살아있다. 이게 핵심이다.
 
 #### ***서버 설치***
@@ -66,7 +73,9 @@ tmux attach -t dev   # 'dev' 세션에 다시 접속
 ```
 
 ## 🤖 Happy Coder
+
 [Happy Coder](https://github.com/slopus/happy)는 Claude Code와 Codex를 지원하는 모바일/웹 클라이언트다. 종단간 암호화를 지원하고 오픈소스다.
+
 서버의 Tmux 세션에서 `claude` 대신 `happy`를 실행해두면 아이폰/아이패드/안드로이드 앱 혹은 웹브라우저에서 제어할 수 있다.
 
 #### ***서버 설치***
@@ -79,9 +88,14 @@ npm install -g happy-coder
 happy  # claude 대신 실행
 ```
 
+#### ***사용 시나리오***
 1. 서버 Tmux 세션에서 `happy` 실행
 2. 아이폰/아이패드 Happy 앱에서 작업 지시
 3. 작업 완료되거나 Claude Code가 질문이 생기면 앱으로 푸시 알림
 4. 앱에서 바로 응답하면 작업 재개
 
 ## 👋
+
+Tailscale로 어디서든 접속하고, Mosh로 연결을 유지하고, Tmux로 세션을 보존하고, Happy Coder로 AI까지 붙였다.
+
+아이패드는 그냥 우리가 알던 아이패드다.
