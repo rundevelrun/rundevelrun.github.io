@@ -34,6 +34,10 @@ tags:
 
 WireGuard 기반 메시 VPN. 포트포워딩 없이 서버에 `100.x.x.x` 고정 IP가 생긴다.
 
+홈 서버를 외부에서 접속하려면 복잡한 공유기 설정을 거쳐야 한다.
+
+Tailscale은 그 과정 없이 기기끼리 직접 연결된다. 같은 계정으로 로그인한 기기들이 하나의 가상 네트워크에 묶이는 방식이다.
+
 #### ***서버 설치***
 ```bash
 curl -fsSL https://tailscale.com/install.sh | sh
@@ -76,7 +80,11 @@ tmux attach -t dev   # 'dev' 세션에 다시 접속
 
 ## 🤖 Happy Coder
 
-[Happy Coder](https://github.com/slopus/happy)는 Claude Code와 Codex를 지원하는 모바일/웹 클라이언트다. 내 코드와 대화가 서버에 남지 않고, 오픈소스다.
+[Happy Coder](https://github.com/slopus/happy)는 Claude Code를 모바일에서 제어할 수 있는 오픈소스 클라이언트다.
+
+터미널, iOS, Android, 웹 앱 전부 실시간으로 동기화된다.
+
+Claude Code가 입력을 기다리거나 작업이 완료되면 푸시 알림이 오고, End-to-End 암호화로 코드와 대화 내용이 보호된다.
 
 서버의 Tmux 세션에서 `claude` 대신 `happy`를 실행해두면 아이폰/아이패드/안드로이드 앱 혹은 웹브라우저에서 제어할 수 있다.
 
