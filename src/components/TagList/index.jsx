@@ -9,10 +9,14 @@ const TagListWrapper = styled.div`
 
 const TagLink = styled.div`
   display: inline-block;
-  padding: 9.6px 11.2px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  border-radius: 50px;
+  padding: 5px 12px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  border: 1px solid ${props =>
+    props.selected
+      ? "transparent"
+      : props.theme.colors.border};
   background-color: ${props =>
     props.selected
       ? props.theme.colors.selectedTagBackground
@@ -22,14 +26,19 @@ const TagLink = styled.div`
       ? props.theme.colors.selectedTagText
       : props.theme.colors.tagText};
   text-decoration: none;
-  font-size: 14.4px;
-  transition: all 0.2s;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s;
 
   &:hover {
     background-color: ${props =>
       props.selected
         ? props.theme.colors.hoveredSelectedTagBackground
         : props.theme.colors.hoveredTagBackground};
+    border-color: ${props =>
+      props.selected
+        ? "transparent"
+        : props.theme.colors.activatedBorder};
   }
 `
 

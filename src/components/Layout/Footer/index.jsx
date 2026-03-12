@@ -4,29 +4,24 @@ import styled from "styled-components"
 import { copyright } from "../../../../blog-config"
 
 const FooterWrapper = styled.footer`
-  margin-top: 32px;
-  padding: 40px 15px;
+  padding: 32px 15px;
   border-top: 1px solid ${props => props.theme.colors.divider};
   text-align: center;
-  font-size: 11pt;
-  font-weight: lighter;
-    max-width: 680px;
-    margin: 0 auto;
+  font-size: 13px;
+  max-width: 680px;
+  margin: 0 auto;
+  color: ${props => props.theme.colors.mutedText};
 
-    color: ${props => props.theme.colors.secondaryText};
-    & > div#copyright {
-        float:left;
-    }
-    & > div#themeby {
-        // margin-bottom: 15px;
-        float: right;
-    }
-    & > div#themeby > a#link {
-        color: ${props => props.theme.colors.secondaryText};
-        //color: #000000;
-        font-weight: bold;
-    }
+  & > div#themeby > a#link {
+    color: ${props => props.theme.colors.tertiaryText};
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
 
+    &:hover {
+      color: ${props => props.theme.colors.text};
+    }
+  }
 `
 
 

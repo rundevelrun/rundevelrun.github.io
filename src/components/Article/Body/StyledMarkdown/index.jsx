@@ -89,9 +89,10 @@ const StyledMarkdown = styled.div`
   }
 
   & blockquote {
-    padding: 18px 24px;
-    border-left: 4px solid ${props => props.theme.colors.blockQuoteBorder};
+    padding: 16px 20px;
+    border-left: 3px solid ${props => props.theme.colors.blockQuoteBorder};
     background-color: ${props => props.theme.colors.blockQuoteBackground};
+    border-radius: 0 6px 6px 0;
 
     & *:last-child {
       margin-bottom: 0;
@@ -141,10 +142,12 @@ const StyledMarkdown = styled.div`
   & table code.language-text {
     position: relative;
     top: -1px;
-    padding: 3px 5px 3px 5px;
+    padding: 2px 6px;
     font-size: 13px;
+    border-radius: 4px;
+    border: 1px solid ${props => props.theme.colors.border};
     background-color: ${props => props.theme.colors.inlineCodeBackground};
-    font-weight: bold;
+    font-weight: 600;
     color: ${props => props.theme.colors.text};
   }
 
