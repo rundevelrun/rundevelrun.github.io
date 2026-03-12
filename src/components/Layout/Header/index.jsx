@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react"
 import styled, { useTheme } from "styled-components"
-import { FreeVisitorCounter } from "@rundevelrun/free-visitor-counter"
 import { Link } from "gatsby"
-import Tippy from "@tippyjs/react";
-import 'tippy.js/dist/tippy.css'; // 기본 스타일 import
 
 import {
   headerTitle,
@@ -17,7 +14,6 @@ import {
   FaTags,
   FaListUl,
   FaSearch,
-  FaChartPie,
 } from "react-icons/fa"
 
 const HeaderWrapper = styled.header`
@@ -118,18 +114,6 @@ const Header = ({ toggleTheme }) => {
   const theme = useTheme()
   const [scrollY, setScrollY] = useState()
   const [hidden, setHidden] = useState(false)
-  const [counterHidden, setCounterHidden] = useState(false)
-  const [dashboardUrl, setDashboardUrl] = useState();
-  const [totalCount, setTotalCount] = useState();
-  const [todayCount, setTodayCount] = useState();
-  const [hasLoaded, setHasLoaded] = useState(false);
-
-  useEffect(() => {
-    if (!hasLoaded) {
-      setHasLoaded(true);
-    }
-  }, []); // 처음 마운트 될 때 한 번만 실행
-
   const checkValue = value => {
     return value === null || value === "" || value === undefined
   }
@@ -188,22 +172,6 @@ const Header = ({ toggleTheme }) => {
               <FaMoon onClick={toggleTheme} />
             </IconRail>
           </ToggleWrapper>
-          <Tippy content={<> Total : {totalCount}<br/>Today : {todayCount} </>} placement="bottom-start" visible={counterHidden && !hidden}>
-            <a href={dashboardUrl} target="_blank" rel="noopener noreferrer">
-              <FaChartPie />
-              {!hasLoaded && (
-                <FreeVisitorCounter
-                  style={{ display: "none" }}
-                  onLoad={function (response) {
-                    setDashboardUrl(response.dashboardUrl);
-                    setTodayCount(response.todayCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-                    setTotalCount(response.totalCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-                    setCounterHidden(true);
-                  }}
-                />
-              )}
-            </a>
-          </Tippy>
           <Link to="/tags">
             <FaTags />
           </Link>
