@@ -74,7 +74,7 @@ tmux attach -t dev   # 'dev' 세션에 다시 접속
 
 ## 🤖 Happy Coder
 
-[Happy Coder](https://github.com/slopus/happy)는 Claude Code와 Codex를 지원하는 모바일/웹 클라이언트다. 종단간 암호화를 지원하고 오픈소스다.
+[Happy Coder](https://github.com/slopus/happy)는 Claude Code와 Codex를 지원하는 모바일/웹 클라이언트다. 내 코드와 대화가 서버에 남지 않고, 오픈소스다.
 
 서버의 Tmux 세션에서 `claude` 대신 `happy`를 실행해두면 아이폰/아이패드/안드로이드 앱 혹은 웹브라우저에서 제어할 수 있다.
 
@@ -98,6 +98,6 @@ happy  # claude 대신 실행
 
 Tailscale로 어디서든 접속하고, Mosh로 연결을 유지하고, Tmux로 세션을 보존하고, Happy Coder로 AI까지 붙였다.
 
-그리고 이 모든 게, Claude Code 빼고 전부 무료다.
+그리고 이 모든 게 전부 무료다. ~~클로드 빼고 ㅎㅎ~~
 
 아이패드는 그냥 우리가 알던 아이패드다.
