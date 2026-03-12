@@ -47,19 +47,19 @@ const StyledMarkdown = styled.div`
 
   & h2 {
     margin-top: 50px;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   & h3 {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 17px;
   }
 
   & h4,
   & h5,
   & h6 {
     margin-top: 30px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   & .heading-anchor {
