@@ -2,7 +2,6 @@ const blogConfig = require("./blog-config")
 const { title, description, author, siteUrl,adsense } = blogConfig
 
 module.exports = {
-  pathPrefix: "/gatsby-starter-rundevelrun",
   siteMetadata: {
     title,
     description,
