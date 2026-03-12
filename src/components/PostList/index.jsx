@@ -43,7 +43,7 @@ const Date = styled.span`
   color: ${props => props.theme.colors.tertiaryText};
 `
 
-const SeriesName = styled.span`
+const SeriesName = styled(Link)`
   font-size: 13px;
   color: ${props => props.theme.colors.tertiaryText};
   text-decoration: none;
@@ -51,6 +51,11 @@ const SeriesName = styled.span`
   border-radius: 4px;
   padding: 2px 8px;
   transition: border-color 0.15s, color 0.15s;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
 
   &:hover {
     border-color: ${props => props.theme.colors.activatedBorder};
@@ -111,9 +116,9 @@ const PostList = ({ postList }) => {
               <CardMeta>
                 <Date>{date}</Date>
                 {series && (
-                  <Link to={`/series/${_.replace(series, /\s/g, "-")}`}>
-                    <SeriesName>{series}</SeriesName>
-                  </Link>
+                  <SeriesName to={`/series/${_.replace(series, /\s/g, "-")}`}>
+                    {series}
+                  </SeriesName>
                 )}
               </CardMeta>
               <Title size="bg">
