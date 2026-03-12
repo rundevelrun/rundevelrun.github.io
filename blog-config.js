@@ -4,7 +4,7 @@ module.exports = {
   // headerSubTitle: "<em style='color:#ed6c02'>RUN</em>:DEVEL:<em style='color:#ed6c02'>RUN</em>", // Logo 2
   copyright: "©RUN:DEVEL:RUN", // copyright in footer
   author: "rundevelrun",  // Your Name
-  siteUrl: "https://6developer.com/", // Your Site URL
+  siteUrl: "https://rundevelrun.com/", // Your Site URL
   description: "똑바로 해, 넌 정말",  // Blog description
   links: {
     github: "https://github.com/rundevelrun",

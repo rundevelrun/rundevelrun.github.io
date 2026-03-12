@@ -2,7 +2,7 @@
   "name": "gatsby-starter-rundevelrun",
   "private": false,
   "description": "gatsby-starter-rundevelrun is a gatsby theme developed for developers to write tech blogs.",
-  "homepage": "https://6developer.com",
+  "homepage": "https://rundevelrun.com",
   "version": "0.0.1",
   "author": "RUN:DEVEL:RUN",
   "dependencies": {
@@ -12,6 +12,7 @@
     "@mui/material": "^6.4.0",
     "@rundevelrun/free-visitor-counter": "^1.1.2",
     "@tippyjs/react": "^4.2.6",
+    "ajv": "^8.18.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.11.0",
