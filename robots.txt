@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://6developer.com/sitemap-index.xml
-Host: https://6developer.com
+Sitemap: https://rundevelrun.com/sitemap-index.xml
+Host: https://rundevelrun.com
