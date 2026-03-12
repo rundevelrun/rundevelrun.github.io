@@ -98,4 +98,6 @@ happy  # claude 대신 실행
 
 Tailscale로 어디서든 접속하고, Mosh로 연결을 유지하고, Tmux로 세션을 보존하고, Happy Coder로 AI까지 붙였다.
 
+그리고 이 모든 게, Claude Code 빼고 전부 무료다.
+
 아이패드는 그냥 우리가 알던 아이패드다.
