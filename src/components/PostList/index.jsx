@@ -5,7 +5,6 @@ import _ from "lodash"
 import { Link } from "gatsby"
 
 import Title from "components/Title"
-import Divider from "components/Divider"
 import TagList from "components/TagList"
 import DisplayAds from "../DisplayAd"
 
@@ -15,39 +14,60 @@ const PostListWrapper = styled.div`
   }
 `
 
-const PostWrapper = styled.div`
+const PostCard = styled.div`
   position: relative;
-  top: 0;
-  transition: all 0.5s;
+  padding: 20px 24px;
+  border: 1px solid ${props => props.theme.colors.border};
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: ${props => props.theme.colors.cardHoverBorder};
+  }
 
   @media (max-width: 768px) {
-    padding: 0 5px;
+    padding: 16px;
   }
 `
 
-const Date = styled.p`
-  margin-bottom: 16px;
-  font-size: 14.4px;
+const CardMeta = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+`
+
+const Date = styled.span`
+  font-size: 13px;
   color: ${props => props.theme.colors.tertiaryText};
 `
-const SeriesName = styled.p`
-  font-size: 14.4px;
-  float: right;
-  color: ${props => props.theme.colors.text};
-  text-decoration-line: underline;  
+
+const SeriesName = styled.span`
+  font-size: 13px;
+  color: ${props => props.theme.colors.tertiaryText};
+  text-decoration: none;
+  border: 1px solid ${props => props.theme.colors.border};
+  border-radius: 4px;
+  padding: 2px 8px;
+  transition: border-color 0.15s, color 0.15s;
+
+  &:hover {
+    border-color: ${props => props.theme.colors.activatedBorder};
+    color: ${props => props.theme.colors.activatedBorder};
+  }
 `
 
 const Excerpt = styled.p`
-  margin-bottom: 32px;
-  line-height: 1.7;
-  font-size: 15px;
-  color: ${props => props.theme.colors.secondaryText};
+  margin: 8px 0 14px 0;
+  line-height: 1.6;
+  font-size: 14px;
+  color: ${props => props.theme.colors.tertiaryText};
   word-break: break-all;
 `
 
-const EmojiWrapper = styled.div`
-  float:left;
-  margin-right: 15px;  
+const EmojiWrapper = styled.span`
+  margin-right: 8px;
 `
 
 const checkIsScrollAtBottom = () => {
@@ -87,29 +107,23 @@ const PostList = ({ postList }) => {
         const { slug } = post.fields
         return (
           <React.Fragment key={JSON.stringify({ slug, date })}>
-            <PostWrapper>
+            <PostCard>
+              <CardMeta>
+                <Date>{date}</Date>
+                {series && (
+                  <Link to={`/series/${_.replace(series, /\s/g, "-")}`}>
+                    <SeriesName>{series}</SeriesName>
+                  </Link>
+                )}
+              </CardMeta>
               <Title size="bg">
-                {emoji ? (
-                  <EmojiWrapper>{emoji}</EmojiWrapper>
-                ) : ''
-                }
+                {emoji && <EmojiWrapper>{emoji}</EmojiWrapper>}
                 <Link to={slug}>{title}</Link>
               </Title>
-              <Link to={`/series/${_.replace(series, /\s/g, "-")}`}>
-              <SeriesName>{series}</SeriesName>
-              </Link>
-              <Date>{date}</Date>
               <Excerpt>{excerpt}</Excerpt>
               <TagList tagList={tags} />
-            </PostWrapper>
-            {
-              (i == 0 || i==2) && (
-                <DisplayAds />
-              )
-            }
-            {postCount - 1 !== i && postList.length - 1 !== i && (
-              <Divider mt="48px" mb="32px" />
-            )}
+            </PostCard>
+            {(i === 0 || i === 2) && <DisplayAds />}
           </React.Fragment>
         )
       })}

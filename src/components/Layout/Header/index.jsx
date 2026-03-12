@@ -47,10 +47,10 @@ const Inner = styled.div`
 `
 
 const BlogTitle = styled.span`
-  letter-spacing: -1.5px;
-  font-family: "Source Code Pro", sans-serif;
-  font-weight: 700;
-  font-size: 22px;
+  letter-spacing: -1px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+  font-size: 20px;
   color: ${props => props.theme.colors.text};
 
   & > a {
