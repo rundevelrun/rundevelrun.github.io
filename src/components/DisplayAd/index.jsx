@@ -5,18 +5,17 @@ const DisplayAds = () => {
   useEffect(() => {
     const pushAd = () => {
       try {
-        const adsbygoogle = window.adsbygoogle
-        adsbygoogle.push({})
+        (window.adsbygoogle = window.adsbygoogle || []).push({})
       } catch (e) {
         console.error(e)
       }
     }
 
+    // AdSense script transforms adsbygoogle from Array to special object after loading.
+    // Wait until it's no longer a plain Array (i.e., fully initialized).
     let interval = setInterval(() => {
-      // Check if Adsense script is loaded every 300ms
-      if (window.adsbygoogle) {
+      if (window.adsbygoogle && !Array.isArray(window.adsbygoogle)) {
         pushAd()
-        // clear the interval once the ad is pushed so that function isn't called indefinitely
         clearInterval(interval)
       }
     }, 300)

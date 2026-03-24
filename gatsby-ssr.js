@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+const React = require("react")
+const blogConfig = require("./blog-config")
 
-// You can delete this file if you're not using it
+exports.onRenderBody = ({ setHeadComponents }) => {
+  if (process.env.NODE_ENV === "production") {
+    setHeadComponents([
+      React.createElement("script", {
+        key: "google-adsense",
+        async: true,
+        src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${blogConfig.adsense.client}`,
+        crossOrigin: "anonymous",
+      }),
+    ])
+  }
+}
