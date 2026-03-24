@@ -25,7 +25,7 @@ const DisplayAds = () => {
     }
   }, [])
   return (
-    <div style={{display: 'block', minHeight: '90px', margin: '32px auto', width: '100%', textAlign: 'center', overflow: 'hidden'}}>
+    <div style={{display: 'block', minHeight: '280px', margin: '32px auto', width: '100%', textAlign: 'center', overflow: 'hidden'}}>
       <ins className="adsbygoogle"
            style={{display: 'block'}}
            data-ad-client={adsense.client}
