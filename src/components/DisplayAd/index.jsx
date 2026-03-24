@@ -25,12 +25,14 @@ const DisplayAds = () => {
     }
   }, [])
   return (
-    <ins className="adsbygoogle"
-         style={{display: 'block'}}
-         data-ad-client={adsense.client}
-         data-ad-slot={adsense.slot}
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
+    <div style={{display: 'block', minHeight: '90px', margin: '32px auto', width: '100%', textAlign: 'center', overflow: 'hidden'}}>
+      <ins className="adsbygoogle"
+           style={{display: 'block'}}
+           data-ad-client={adsense.client}
+           data-ad-slot={adsense.slot}
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
   )
 }
 
