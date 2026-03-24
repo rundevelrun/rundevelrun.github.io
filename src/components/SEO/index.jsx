@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { siteUrl, title as blogName } from "../../../blog-config"
 
-const SEO = ({ title, description, url }) => {
+const SEO = ({ title, description, url, noindex = false }) => {
   return (
     <Helmet>
       {title === blogName ? (
@@ -10,6 +10,7 @@ const SEO = ({ title, description, url }) => {
       ) : (
         <title>{title + ' | ' + blogName}</title>
       )}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:image" content={`${siteUrl}/og-image.png`} />

@@ -43,7 +43,7 @@ const SeriesPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description} url={siteUrl} />
+      <SEO title={title} description={description} url={siteUrl} noindex />
 
       <Subtitle> SERIES </Subtitle>
 

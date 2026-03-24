@@ -63,6 +63,7 @@ const Series = ({ pageContext, data }) => {
         title={`SERIES: ${seriesName}`}
         description={description}
         url={siteUrl}
+        noindex
       />
 
       <Header>

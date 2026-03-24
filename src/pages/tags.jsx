@@ -67,7 +67,7 @@ const TagsPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description} url={siteUrl} />
+      <SEO title={title} description={description} url={siteUrl} noindex />
       <Subtitle>TAGS</Subtitle>
       <TagListWrapper>
         <TagList

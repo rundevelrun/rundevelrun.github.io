@@ -39,7 +39,7 @@ const Search = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description} url={siteUrl} />
+      <SEO title={title} description={description} url={siteUrl} noindex />
       <VerticalSpace size={10} />
       <SearchWrapper>
         <Badge badgeContent={filteredPosts.length} color="warning" max={99} showZero={true}
