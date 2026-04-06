@@ -44,6 +44,7 @@ const Profile = styled.div`
   background-image: url(${profileImageRoot}/profile.png);
   background-size: cover;
   background-position: center;
+  filter: grayscale(100%) contrast(1.3);
 `
 
 const Author = styled.div`
