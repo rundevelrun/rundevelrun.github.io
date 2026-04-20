@@ -14,6 +14,7 @@ import {
   FaTags,
   FaListUl,
   FaSearch,
+  FaUser,
 } from "react-icons/fa"
 
 const HeaderWrapper = styled.header`
@@ -184,6 +185,9 @@ const Header = ({ toggleTheme }) => {
               <FaMoon onClick={toggleTheme} />
             </IconRail>
           </ToggleWrapper>
+          <Link to="/about">
+            <FaUser />
+          </Link>
           <Link to="/tags">
             <FaTags />
           </Link>
