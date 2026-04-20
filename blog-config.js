@@ -5,7 +5,7 @@ module.exports = {
   copyright: "©RUN:DEVEL:RUN", // copyright in footer
   author: "rundevelrun",  // Your Name
   siteUrl: "https://rundevelrun.com/", // Your Site URL
-  description: "똑바로 해, 넌 정말",  // Blog description
+  description: "개발 경험과 사이드 프로젝트를 기록하는 블로그",  // Blog description
   links: {
     github: "https://github.com/rundevelrun",
   },
