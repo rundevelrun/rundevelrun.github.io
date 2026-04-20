@@ -103,7 +103,7 @@ const PrivacyPolicyPage = () => {
             개인정보처리방침에 관한 문의는 아래 이메일로 연락주시기 바랍니다.
           </Paragraph>
           <Paragraph>
-            <a href="mailto:niphyang@gmail.com">niphyang@gmail.com</a>
+            <a href="mailto:rundevelrun@gmail.com">rundevelrun@gmail.com</a>
           </Paragraph>
         </Section>
 

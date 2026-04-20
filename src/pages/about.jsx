@@ -3,6 +3,8 @@ import styled from "styled-components"
 import SEO from "components/SEO"
 import Layout from "components/Layout"
 import VerticalSpace from "components/VerticalSpace"
+import { FaGithub } from "react-icons/fa"
+import { FaRegEnvelope } from "react-icons/fa6"
 import { siteUrl } from "../../blog-config"
 
 const Wrapper = styled.div`
@@ -11,45 +13,74 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `
 
-const Title = styled.h1`
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: ${props => props.theme.colors.text};
-`
-
 const Section = styled.section`
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 `
 
 const SectionTitle = styled.h2`
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 700;
-  margin-bottom: 12px;
-  color: ${props => props.theme.colors.text};
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: ${props => props.theme.colors.mutedText};
+  margin-bottom: 16px;
 `
 
 const Paragraph = styled.p`
   font-size: 15px;
   line-height: 1.8;
   color: ${props => props.theme.colors.secondaryText};
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 `
 
-const TagList = styled.ul`
-  list-style: none;
-  padding: 0;
+const TagList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 `
 
-const Tag = styled.li`
-  padding: 4px 12px;
+const Tag = styled.span`
+  padding: 5px 13px;
   border-radius: 4px;
   font-size: 13px;
   background-color: ${props => props.theme.colors.hoveredItemBackground};
   color: ${props => props.theme.colors.secondaryText};
+`
+
+const ContactList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`
+
+const ContactItem = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: ${props => props.theme.colors.tertiaryText};
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: ${props => props.theme.colors.text};
+  }
+
+  & svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  & svg path {
+    fill: currentColor;
+  }
+`
+
+const Divider = styled.hr`
+  border: none;
+  border-top: 1px solid ${props => props.theme.colors.divider};
+  margin: 0 0 40px 0;
 `
 
 const AboutPage = () => {
@@ -62,8 +93,6 @@ const AboutPage = () => {
       />
       <VerticalSpace size={40} />
       <Wrapper>
-        <Title>About</Title>
-
         <Section>
           <SectionTitle>블로그 소개</SectionTitle>
           <Paragraph>
@@ -74,6 +103,8 @@ const AboutPage = () => {
             Claude Code를 활용한 바이브코딩 경험도 함께 공유합니다.
           </Paragraph>
         </Section>
+
+        <Divider />
 
         <Section>
           <SectionTitle>주로 다루는 주제</SectionTitle>
@@ -89,22 +120,24 @@ const AboutPage = () => {
           </TagList>
         </Section>
 
+        <Divider />
+
         <Section>
-          <SectionTitle>운영자</SectionTitle>
-          <Paragraph>
-            GitHub:{" "}
-            <a
+          <SectionTitle>연락처</SectionTitle>
+          <ContactList>
+            <ContactItem
               href="https://github.com/rundevelrun"
               target="_blank"
               rel="noreferrer"
             >
+              <FaGithub />
               @rundevelrun
-            </a>
-          </Paragraph>
-          <Paragraph>
-            문의:{" "}
-            <a href="mailto:niphyang@gmail.com">niphyang@gmail.com</a>
-          </Paragraph>
+            </ContactItem>
+            <ContactItem href="mailto:rundevelrun@gmail.com">
+              <FaRegEnvelope />
+              rundevelrun@gmail.com
+            </ContactItem>
+          </ContactList>
         </Section>
       </Wrapper>
       <VerticalSpace size={40} />
